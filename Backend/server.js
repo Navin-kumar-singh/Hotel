@@ -2,7 +2,7 @@ import express from "express";
 import "dotenv/config";
 import bodyParser from "body-parser";
 import cors from "cors";
-import router from "./utils/route/user.route.js";
+// import router from "./utils/route/user.route.js";
 import db from "./utils/database/db.js";
 import { clerkMiddleware } from '@clerk/express'
 import clerkWebhoooks from "./utils/controller/userController.js";
@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/api", router);
+// app.use("/api", router);
 app.use("/api/clerk", clerkWebhoooks)
 
 app.get("/", (req, res) => {
